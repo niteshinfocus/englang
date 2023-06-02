@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2&display=swap" rel="stylesheet">
+
+    <title>Result</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-size: 1.1em;
+            font-family: 'Exo 2','Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            background-color: #f3f1f1;
+
+        }
+
+        nav {
+            background-color: #fff;
+            font-size: 2rem;
+            font-weight: 900;
+            padding-left: 2%;
+            cursor: pointer;
+        }
+
+        /* for feedback */
+        .feedbackWrapper {
+            display: none;
+            padding: 10px;
+            background-color: #fff4e6;
+            border: 2px solid #ffac41;
+            border-radius: 5px;
+            margin-top: 1%;
+        }
+
+        .feedback {
+            display: inline-block;
+            padding: 5px 10px;
+            background-color: #ffac41;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 1% 0%;
+        }
+
+        /* ---------------------------------------------- */
+        /* for feedback in english */
+        .engfeedbackWrapper {
+            display: none;
+            padding: 10px;
+            background-color: #e6fbff;
+            border: 2px solid #76e4ff;
+            border-radius: 5px;
+            margin-top: 1%;
+        }
+
+        .engfeedback {
+            display: inline-block;
+            padding: 5px 10px;
+            background-color: #76e4ff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 1% 0%;
+        }
+
+        /* ---------------------------------------------- */
+        /* for speech */
+        .speechWrapper {
+            display: none;
+            padding: 10px;
+            background-color: #eefff9;
+            border: 2px solid #60ffa7;
+            border-radius: 5px;
+            margin-top: 1%;
+        }
+
+        .yourSpeech {
+            display: inline-block;
+            padding: 5px 10px;
+            background-color: #60ffa7;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 1% 0%;
+        }
+
+        /* ---------------------------------------------- */
+        /* for original script */
+        .scriptWrapper {
+            display: none;
+            padding: 10px;
+            background-color: #ffe8f8;
+            border: 2px solid #ff6ed4;
+            border-radius: 5px;
+            margin-top: 1%;
+            margin-bottom: 2%;
+        }
+
+        .script {
+            display: inline-block;
+            padding: 5px 10px;
+            background-color: #ff6ed4;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 1% 0%;
+        }
+
+        /* ------------------------------------------ */
+        .box {
+            width: 95%;
+            margin: auto;
+            margin-top: 1.5%;
+            margin-bottom: 2%;
+            background-color: white;
+            border-radius: 10px;
+            padding: 1% 3%;
+            box-shadow: 0px 0px 7px grey;
+        }
+
+        footer {
+            position: fixed;
+            width: 100%;
+            bottom: 0px;
+            text-align: center;
+            background-color: white;
+            z-index: -1;
+        }
+
+        div a {
+            display: flex;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <nav> englang</nav>
+
+    <div class="box">
+        <button class="feedback">Feedback (Hindi)</button> <span> &lt Click to see</span>
+        <div class="feedbackWrapper">
+            <p>{{hiMsg}} </p>
+        </div>
+    </div>
+
+    <div class="box">
+        <button class="engfeedback">Feedback (English)</button> <span> &lt Click to see</span>
+        <div class="engfeedbackWrapper">
+            <p>{{aiMsg}} </p>
+        </div>
+    </div>
+
+    <div class="box">
+        <button class="yourSpeech">Your Speech</button> <span> &lt Click to see</span>
+        <div class="speechWrapper">
+            <p>{{userInput}}</p>
+        </div>
+    </div>
+
+    <div class="box">
+        <button class="script">Original Script</button> <span> &lt Click to see</span>
+        <div class="scriptWrapper">
+            <p>{{random_script}} </p>
+        </div>
+    </div>
+
+    <footer> <a href="https://instagram.com/nitesh_on?igshid=ZGUzMzM3NWJiOQ==">Give Feedback</a> | Made with ❤ in
+        Bharat</footer>
+
+</body>
+<script>
+
+    const feedbackButton = document.querySelector('.feedback');
+    const feedbackWrapper = document.querySelector('.feedbackWrapper');
+    feedbackButton.addEventListener('click', function () {
+        if (feedbackWrapper.style.display === 'block') {
+            feedbackWrapper.style.display = 'none';
+        } else {
+            feedbackWrapper.style.display = 'block';
+        }
+    });
+
+    const engfeedbackButton = document.querySelector('.engfeedback');
+    const engfeedbackWrapper = document.querySelector('.engfeedbackWrapper');
+    engfeedbackButton.addEventListener('click', function () {
+        if (engfeedbackWrapper.style.display === 'block') {
+            engfeedbackWrapper.style.display = 'none';
+        } else {
+            engfeedbackWrapper.style.display = 'block';
+        }
+    });
+
+    const yourSpeech = document.querySelector('.yourSpeech');
+    const speechWrapper = document.querySelector('.speechWrapper');
+    yourSpeech.addEventListener('click', function () {
+        if (speechWrapper.style.display === 'block') {
+            speechWrapper.style.display = 'none';
+        } else {
+            speechWrapper.style.display = 'block';
+        }
+    });
+
+    const script = document.querySelector('.script');
+    const scriptWrapper = document.querySelector('.scriptWrapper');
+    script.addEventListener('click', function () {
+        if (scriptWrapper.style.display === 'block') {
+            scriptWrapper.style.display = 'none';
+        } else {
+            scriptWrapper.style.display = 'block';
+        }
+    });
+
+</script>
+
+</html>
