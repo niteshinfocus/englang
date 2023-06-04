@@ -164,6 +164,9 @@
       let current = event.resultIndex;
       const transcript = event.results[current][0].transcript;
       content += transcript;
+      //remove the below line later \/
+      console.log(content)
+      // remove the above line later /\
       output.textContent = content;
       // recordButton.innerText = 'Record More'
     }
