@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Exo+2&display=swap" rel="stylesheet">
@@ -38,7 +38,7 @@
       width: 97%;
       display: flex;
       background-color: #fff;
-      padding: 1.5% 2%;
+      padding: 2% 2%;
       margin-top: 1%;
       border-radius: 10px;
       flex-wrap: wrap;
@@ -46,10 +46,7 @@
       align-items: center;
       margin-bottom: 2%;
     }
-    .f-box{
-      display: flex;
-      flex-direction: column;
-    }
+
 
     button {
       background: none;
@@ -58,87 +55,96 @@
       border: 2px solid black;
       border-radius: 10px;
       cursor: pointer;
-    }
-
-    iframe {
+      width: 100%;
       margin: auto;
-      border-radius: 10px;
-      width: fill;
     }
 
     textarea {
-      width: 100%;
       border-radius: 10px;
       padding: 1% 2%;
       resize: none;
       max-height: 20vh;
       margin-top: 1%;
+      width: 100%;
     }
-    
-    #record{
+
+    #record {
       background-color: red;
       color: white;
       font-weight: 900;
       width: 99%;
       margin: auto;
     }
+
     .h {
-      margin: 2% 0;
-      margin-left: -1%;
+      /* margin: auto; */
+      margin-top: 2%;
+      margin-bottom: 2%;
       padding: 1% 2.5%;
       font-weight: bold;
-      width: 50%;
-      border-right: 2px solid black;
-      transform: skew(-20deg);
+      width: fit-content;
+      border-top-right-radius: 10px;
     }
 
     .h1 {
-      background-color: #ff5858;
+      background-color: #ffbe74;
     }
 
     .h2 {
-      background-color: #69ffa3;
+      background-color: #58ffc7;
     }
 
     .h3 {
-      background-color: #b575ff;
+      background-color: #c175ff;
     }
+
     footer {
-            position: fixed;
-            width: 100%;
-            bottom: 0px;
-            text-align: center;
-            background-color: white;
-            z-index: -1;
-        }
+      position: fixed;
+      width: 100%;
+      bottom: 0px;
+      text-align: center;
+      background-color: white;
+      z-index: -1;
+    }
+
+    .p-block {
+      display: block;
+    }
   </style>
 </head>
 
 <body>
   <nav>englang</nav>
-  <p class="h h1">How to use Video</p>
-  <div class="box">
 
-    <iframe width="98%" height="230px" src="https://www.youtube.com/embed/" title="YouTube video player" frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      allowfullscreen></iframe>
+
+  <p class="h h1">How to use:</p>
+  <div class="box">
+    <p class="p-block">
+      <b>1.</b> Click the <i>"Record"</i> button and Speak the <i>Speech</i> in English.
+    </p>
+    <p class="p-block">
+      <b>2.</b> Correct spelling error and click on <i>"Send"</i> button.
+    </p>
+
   </div>
 
-  <p class="h h2">Script</p>
+  <p class="h h2">Speech</p>
   <div class="box">
     <p id="message">{{translated}}</p>
   </div>
 
-
   <p class="h h3">Record & Send</p>
-  <div class="box f-box">
-    <button id="record">Record</button>
-  </div>
 
-    <form class="box" action="/search" method="post">
+  <div class="box">
+
+    <button id="record">Record</button>
+
+    <form class="" action="/search" method="post">
       <textarea name="msg" id="output" cols="30" rows="10"></textarea>
       <button type="submit">Send</button>
     </form>
+
+  </div>
 
 
 
@@ -164,13 +170,11 @@
       let current = event.resultIndex;
       const transcript = event.results[current][0].transcript;
       content += transcript;
-      //remove the below line later \/
       console.log(content)
-      // remove the above line later /\
       output.textContent = content;
       // recordButton.innerText = 'Record More'
     }
-// defining instruction in side button
+    // defining instruction in side button
     recognition.onstart = function () {
       recordButton.innerText = 'Recording...'
     }
