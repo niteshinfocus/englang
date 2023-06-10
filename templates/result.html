@@ -38,8 +38,8 @@
         .engfeedbackWrapper {
             display: none;
             padding: 10px;
-            background-color: #fff8e6;
-            border: 2px solid #ffd476;
+            background-color: #eefff9;
+            border: 2px solid #51e5ff;
             border-radius: 5px;
             margin-top: 1%;
         }
@@ -47,7 +47,8 @@
         .engfeedback {
             display: inline-block;
             padding: 5px 10px;
-            background-color: #ffd476;
+            
+            background-color: #51e5ff;
             border: none;
             border-radius: 5px;
             cursor: pointer;
@@ -59,8 +60,8 @@
         .speechWrapper {
             display: none;
             padding: 10px;
-            background-color: #eefff9;
-            border: 2px solid #60ffa7;
+            background-color: #fff8e6;
+            border: 2px solid #ffd476;
             border-radius: 5px;
             margin-top: 1%;
         }
@@ -68,7 +69,7 @@
         .yourSpeech {
             display: inline-block;
             padding: 5px 10px;
-            background-color: #60ffa7;
+            background-color: #ffd476;
             border: none;
             border-radius: 5px;
             cursor: pointer;
@@ -128,27 +129,28 @@
     <nav> englang</nav>
 
     <div class="box">
-        <button class="engfeedback">Feedback (English)</button> <span> &lt Click to see</span>
-        <div class="engfeedbackWrapper">
-            <p>{{aiMsg}} </p>
-        </div>
-    </div>
-
-    <div class="box">
-        <button class="yourSpeech">Your Speech</button> <span> &lt Click to see</span>
+        <button class="yourSpeech">Your Speech</button> <span> Click to see</span>
         <div class="speechWrapper">
             <p>{{userInput}}</p>
         </div>
     </div>
 
     <div class="box">
-        <button class="script">Original Script</button> <span> &lt Click to see</span>
+        <button class="script">Original Script</button> <span> Click to see</span>
         <div class="scriptWrapper">
             <p>{{random_script}} </p>
         </div>
     </div>
 
-    <footer> <a href="https://instagram.com/nitesh_on?igshid=ZGUzMzM3NWJiOQ==">Give Feedback</a> | Made with ❤ in
+    <div class="box">
+        <button class="engfeedback">Feedback</button> <span> Click to see</span>
+        <div class="engfeedbackWrapper">
+            <p>{{aiMsg}} </p>
+        </div>
+    </div>
+
+
+    <footer> Insta- nitesh.dd | Made with ❤ in
         Bharat</footer>
 
 </body>
