@@ -20,7 +20,7 @@ def result():
     userInput = '{}'.format(text)
 
     #generating response
-    completion = openai.ChatCompletion.create(model="gpt-3.5-turbo", messages=[{"role": "user", "content": "compare this sentence '" + userInput +" '" + " with '" + engScript + " ' "+ " and find the areas in which first sentence is wrong with respect to second sentence. Tell in 2-3 lines"}])
+    completion = openai.ChatCompletion.create(model="gpt-3.5-turbo", messages=[{"role": "user", "content": "compare this sentence '" + userInput +" '" + " with '" + engScript + " ' "+ " and find the areas in which the sentence is wrong with respect to second sentence. Tell in 2-3 lines"}])
     aiMsg = completion.choices[0].message.content
 
     
